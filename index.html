@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رذاذي | RAZAZY - عالم العطور الفاخرة</title>
+    <meta name="description" content="رذاذي RAZAZY - عالم العطور الفاخرة وعطور النيش في المملكة العربية السعودية. اكتشف تشكيلتنا الحصرية بحجم 50 مل.">
+    <meta name="keywords" content="رذاذي, RAZAZY, عطور رذاذي, عطور فاخرة, متجر عطور, عطور السعودية">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0b0b0b;
+            --card-bg: #151515;
+            --gold: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --border-color: #262626;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 35px 20px 25px;
+            background: radial-gradient(circle at top, #201b12 0%, #0b0b0b 75%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .brand-logo-ar {
+            font-size: 3.2rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            line-height: 1.1;
+        }
+
+        .brand-logo-en {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            letter-spacing: 7px;
+            color: var(--gold);
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        .hero-video-container {
+            max-width: 260px;
+            margin: 0 auto 18px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            background: #000;
+        }
+
+        .hero-video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .specs-badge {
+            display: inline-flex;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            padding: 7px 18px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            color: var(--gold-light);
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .brand-story {
+            color: var(--gold-light);
+            font-size: 0.95rem;
+            max-width: 580px;
+            margin: 10px auto 0;
+            line-height: 1.8;
+            padding: 0 15px;
+            border-right: 3px solid var(--gold);
+            text-align: right;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 25px 15px 50px;
+        }
+
+        .search-box {
+            margin-bottom: 25px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 13px 20px;
+            border-radius: 14px;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--gold);
+        }
+
+        /* تنسيق العرض العمودي (صور تحت بعضها) */
+        .perfumes-list {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .bottle-card-vertical {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 18px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+        }
+
+        .bottle-card-vertical:hover, .bottle-card-vertical:active {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .bottle-number {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 0.8rem;
+            color: var(--gold);
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .bottle-img-wrapper {
+            width: 100%;
+            height: 280px;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            background: #080808;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .bottle-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .single-name-ar {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .single-name-en {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .single-price {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .tap-details-badge {
+            display: inline-block;
+            font-size: 0.78rem;
+            color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            padding: 4px 14px;
+            border-radius: 20px;
+        }
+
+        /* النافذة المنبثقة لباقي المواصفات */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(6px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-card {
+            background-color: #161616;
+            border: 1px solid var(--gold);
+            border-radius: 24px;
+            max-width: 430px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 24px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 220px;
+            border-radius: 16px;
+            object-fit: cover;
+            margin-bottom: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        .modal-title-ar {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .modal-title-en {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--gold);
+            margin-bottom: 14px;
+        }
+
+        .modal-desc {
+            font-size: 0.92rem;
+            color: #d8d8d8;
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+
+        .modal-specs {
+            border-top: 1px solid var(--border-color);
+            padding-top: 14px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .spec-item {
+            margin-bottom: 10px;
+        }
+
+        .spec-label {
+            color: var(--gold);
+            font-weight: 700;
+            display: block;
+            font-size: 0.82rem;
+        }
+
+        .spec-val {
+            color: #cccccc;
+        }
+
+        .modal-price {
+            color: var(--gold-light);
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #d4af37 0%, #aa8520 100%);
+            color: #000;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 14px;
+            font-size: 1.05rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background: #080808;
+        }
+
+        footer span {
+            color: var(--gold);
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-logo-ar">رذاذي</div>
+        <div class="brand-logo-en">RAZAZY</div>
+        
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline>
+                <source src="perfume.mp4" type="video/mp4">
+                متصفحك لا يدعم تشغيل الفيديو
+            </video>
+        </div>
+
+        <div class="specs-badge">
+            <span>EAU DE PARFUM</span>
+            <span>•</span>
+            <span>50 ML / 1.7 FL.OZ</span>
+            <span>•</span>
+            <span>MADE IN KSA 🇸🇦</span>
+        </div>
+
+        <p class="brand-story">
+            "انطلقنا لنقدم تجربة عطرية فريدة تمزج أصالة الشرق بروعة الفخامة العصرية، لتعبر كل رشة عن هويتك الخاصة"
+        </p>
+    </header>
+
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث باسم العطر أو الطابع العطري...">
+        </div>
+
+        <div class="perfumes-list" id="perfumesList"></div>
+    </div>
+
+    <!-- النافذة المنبثقة للتفاصيل -->
+    <div class="modal-overlay" id="detailModal" onclick="closeModalOnBg(event)">
+        <div class="modal-card">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <img id="mImg" class="modal-img" src="" alt="">
+            <h2 id="mTitleAr" class="modal-title-ar"></h2>
+            <div id="mTitleEn" class="modal-title-en"></div>
+            <p id="mDesc" class="modal-desc"></p>
+            
+            <div class="modal-specs">
+                <div class="spec-item">
+                    <span class="spec-label">الطابع العطري:</span>
+                    <span id="mChar" class="spec-val"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">أوقات الاستخدام:</span>
+                    <span id="mUsage" class="spec-val"></span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">الحجم والتركيز:</span>
+                    <span class="spec-val">50 مل — Eau de Parfum</span>
+                </div>
+                <div class="spec-item" style="margin-bottom:0;">
+                    <span class="spec-label">السعر للعبوة:</span>
+                    <span id="mPrice" class="modal-price"></span>
+                </div>
+            </div>
+
+            <a id="mWaBtn" href="#" target="_blank" class="btn-whatsapp">اطلب العطر عبر واتساب</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة لبراند <span>رذاذي | RAZAZY</span></p>
+        <p style="margin-top: 5px; font-size: 0.78rem;">صُنع بفخر في المملكة العربية السعودية</p>
+    </footer>
+
+    <script>
+        const WHATSAPP_NUMBER = "966539266125";
+        const PERFUME_IMAGE_URL = "bottle.jpg";
+
+        const perfumes = [
+            { id: 1, nameAr: 'رذاذي - فخامة', nameEn: 'Razazy - Luxury', desc: 'توليفة عطرية صُممت لتعبر عن الرقي الكلاسيكي والحضور المهيب. يجمع هذا العطر بين الانتعاش الأنيق والعمق الدافئ ليكون رفيقك المثالي في المناسبات الرسمية والاجتماعات الهامة. عطر متوازن يمنحك هالة من الثقة والوقار منذ اللحظة الأولى.', character: 'أروماتك - خشبي فاخر.', usage: 'مثالي للمناسبات الرسمية، المساء، والأجواء المعتدلة.', price: '35 ريال سعودي' },
+            { id: 2, nameAr: 'رذاذي - تميز', nameEn: 'Razazy - Signature', desc: 'عطر استثنائي صُنع لمن يرفضون أن يكونوا عاديين. يتميز بتركيبة متناغمة تجمع بين الحيوية العصرية والجاذبية الدافئة، مما يجعله عطراً يأسر الحواس ويصعب نسيانه. بضع رشات كفيلة بأن تجعله خيارك الأول الذي لا غنى عنه في كل يوم.', character: 'حمضي - أروماتك دافئ.', usage: 'مناسب للاستخدام اليومي، العمل، واللقاءات الخاصة.', price: '35 ريال سعودي' },
+            { id: 3, nameAr: 'رذاذي - انتعاش', nameEn: 'Razazy - Fresh Breeze', desc: 'جرعة نقية من الحيوية والانطلاق في زجاجة واحدة. يستلهم هذا العطر نسمات الصباح المنعشة ليمنحك شعوراً فورياً بالنظافة والتجدد طوال ساعات النهار. خيار مثالي للأجواء الحارة ومحبي الروائح الخفيفة والمنعشة التي تبث الطاقة الإيجابية.', character: 'منعش - حمضي عشبي.', usage: 'مثالي لأوقات الصباح، الصيف، النادي الرياضي، والدوام اليومي.', price: '35 ريال سعودي' },
+            { id: 4, nameAr: 'رذاذي - نيتش', nameEn: 'Razazy - Niche Velvet', desc: 'تجربة عطرية مخملية مستوحاة من عالم عطور النيش الحصرية. يمتاز بتدرج عطري ساحر يبدأ بنفحات غامضة وجذابة، ثم يستقر على لمسة ناعمة ودافئة تلامس الحواس برقي وهدوء. عطر يعكس الذوق الرفيع والخصوصية التامة لمن يرتديه.', character: 'زهري - شرقي مخملي.', usage: 'مثالي للأمسيات الخاصة، السهرات، والأجواء الباردة.', price: '35 ريال سعودي' },
+            { id: 5, nameAr: 'رذاذي - بصمة خاصة', nameEn: 'Razazy - Special Scent', desc: 'اجعل لحضورك بصمة خاصة تسبقك إلى أي مكان. يجمع هذا العطر ببراعة بين الانتعاش الراقي واللمسات الحسية الدافئة، ليخلق تناغماً فريداً يندمج مع شخصيتك ويترك أثراً عالقاً في الأذهان حتى بعد رحيلك.', character: 'خشبي - زهري متوازن.', usage: 'متعدد الاستخدامات، يناسب كافة الأوقات والفصول.', price: '35 ريال سعودي' },
+            { id: 6, nameAr: 'رذاذي - الجاذبية', nameEn: 'Razazy - Magnetic Attraction', desc: 'قوة جذب لا تُقاوم في كل رشة. عطر جريء ومكثف صُمم ليبرز الكاريزما الشخصية بأسلوب عصري لافت. يرتكز على نفحات عميقة ومثيرة تمنحك فوحاناً قوياً وثباتاً يدوم لساعات طويلة، ليكون سر جاذبيتك في كل لقاء.', character: 'شرقي - تابلي دافئ.', usage: 'مثالي للسهرات، المناسبات المسائية، وأجواء الشتاء.', price: '35 ريال سعودي' },
+            { id: 7, nameAr: 'رذاذي - ملكي', nameEn: 'Razazy - Royal', desc: 'فخامة تليق بالملوك. توليفة غنية ومهيبة تمزج بين عراقة النفحات الشرقية الساحرة ولمسات العطور الغربية الفاخرة، لتنتج عطراً ذا شخصية قوية وحضور طاغٍ. صُمم ليمنحك شعوراً بالتميز المطلق في أرقى المحافل والمناسبات.', character: 'شرقي - فانيليا وأخشاب فاخرة.', usage: 'مثالي للأعياد، حفلات الزفاف، والمناسبات الكبرى.', price: '35 ريال سعودي' },
+            { id: 8, nameAr: 'رذاذي - الانتعاش القوي', nameEn: 'Razazy - Power Fresh', desc: 'عندما يلتقي الانتعاش الفائق بقوة الثبات. يتميز هذا العطر بتركيبة معززة بنفحات المسك الأبيض النقي مع لمسات حمضية حادة، ليمنحك إحساساً بالنظافة الفاخرة والفوحان القوي الذي يصمد أمام حرارة الأجواء لساعات طويلة.', character: 'مسكي - حمضي منعش.', usage: 'مثالي للأجواء الحارة، الاستخدام اليومي المكثف، وبعد الاستحمام.', price: '35 ريال سعودي' },
+            { id: 9, nameAr: 'رذاذي - الفخامة الهادئة', nameEn: 'Razazy - Calm Luxury', desc: 'الأناقة الحقيقية لا تحتاج إلى صخب. عطر ناعم ومريح للأعصاب يجمع بين نقاء المسك الفاخر ولمسات دافئة وهادئة تمنحك إحساساً بالسكينة والرقي. مثالي لمن يفضلون العطور الراقية التي تمنح حضوراً أنيقاً دون حدة.', character: 'مسكي - بودري ناعم.', usage: 'مثالي لأوقات الاسترخاء، العمل المكتبي، واللقاءات العائلية.', price: '35 ريال سعودي' },
+            { id: 10, nameAr: 'رذاذي - رومانسية', nameEn: 'Razazy - Romantic', desc: 'ترجمة عطرية للمشاعر الدافئة واللحظات الحالمة. ينسج هذا العطر هالة من الرقة والنعومة بفضل التناغم الساحر بين النفحات الزهرية الحالمة ولمسات المسك الناعم، ليمنحك جاذبية آسرة تفيض بالأنوثة والرقي.', character: 'زهري - مسكي حالم.', usage: 'مثالي للأمسيات الرومانسية، الهدايا، والأوقات الخاصة.', price: '35 ريال سعودي' },
+            { id: 11, nameAr: 'رذاذي - نغم الفخامة القوية', nameEn: 'Razazy - Naghram Luxury', desc: 'سيمفونية عطرية جريئة لعشاق العطور الثقيلة ذات الفوحان الاستثنائي. يجمع بين عمق الأخشاب العطرية وقوة المسك المركز ليخلق رائحة فخمة ومشبعة تفرض حضورها بقوة وتدوم على الملابس لأيام.', character: 'خشبي - مسكي مركز.', usage: 'مثالي للأجواء الباردة، المناسبات المسائية الفاخرة، ومحبي العطور القوية.', price: '35 ريال سعودي' }
+        ];
+
+        const container = document.getElementById('perfumesList');
+        const searchInput = document.getElementById('searchInput');
+        const modal = document.getElementById('detailModal');
+
+        function renderPerfumes(list) {
+            container.innerHTML = '';
+            list.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'bottle-card-vertical';
+                card.onclick = () => openModal(p);
+                card.innerHTML = `
+                    <span class="bottle-number">#${p.id}</span>
+                    <div class="bottle-img-wrapper">
+                        <img src="${PERFUME_IMAGE_URL}" alt="${p.nameAr}">
+                    </div>
+                    <div class="single-name-ar">${p.nameAr}</div>
+                    <div class="single-name-en">${p.nameEn}</div>
+                    <div class="single-price">${p.price}</div>
+                    <span class="tap-details-badge">اضغط لعرض باقي المواصفات والطلب</span>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function openModal(p) {
+            document.getElementById('mImg').src = PERFUME_IMAGE_URL;
+            document.getElementById('mTitleAr').textContent = p.nameAr;
+            document.getElementById('mTitleEn').textContent = p.nameEn;
+            document.getElementById('mDesc').textContent = p.desc;
+            document.getElementById('mChar').textContent = p.character;
+            document.getElementById('mUsage').textContent = p.usage;
+            document.getElementById('mPrice').textContent = p.price;
+
+            const message = encodeURIComponent(`مرحباً براند رذاذي، أرغب في طلب عطر: (${p.nameAr} - ${p.nameEn}) بسعر ${p.price}، حجم 50 مل.`);
+            document.getElementById('mWaBtn').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closeModalOnBg(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = perfumes.filter(p => 
+                p.nameAr.toLowerCase().includes(term) || 
+                p.nameEn.toLowerCase().includes(term) || 
+                p.character.toLowerCase().includes(term) ||
+                p.usage.toLowerCase().includes(term)
+            );
+            renderPerfumes(filtered);
+        });
+
+        renderPerfumes(perfumes);
+    </script>
+</body>
+</html>
